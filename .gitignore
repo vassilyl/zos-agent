@@ -1,0 +1,74 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pyc
+*.pyo
+*.pyd
+*.pdb
+*.egg-info/
+dist/
+build/
+.eggs/
+*.egg
+*.manifest
+*.spec
+*.log
+*.pot
+*.mo
+*.db
+*.sqlite3
+*.sqlite
+*.env
+.env
+.venv
+venv/
+ENV/
+.envrc
+pip-log.txt
+pip-delete-this-directory.txt
+htmlcov/
+.tox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+.hypothesis/
+.pytest_cache/
+.pyre/
+.mypy_cache/
+.dmypy.json
+.pytype/
+# Jupyter Notebook
+.ipynb_checkpoints
+# PyInstaller
+*.spec
+# Unit test / coverage reports
+*.cover
+# pyenv
+.python-version
+# celery beat schedule file
+celerybeat-schedule
+# SageMath parsed files
+*.sage.py
+# Environments
+.env.bak
+.env.example
+# Spyder project settings
+.spyderproject
+.spyproject
+# Rope project settings
+.ropeproject
+# mkdocs documentation
+/site
+# mypy
+.mypy_cache/
+# Pyre type checker
+.pyre/
+# pytype static type analyzer
+.pytype/
+# Cython debug symbols
+cython_debug/
