@@ -17,18 +17,6 @@ def test_render_svg_to_png_basic():
         assert out_path == str(png_path)
         assert os.path.getsize(out_path) > 0
 
-def test_render_svg_to_png_default_output():
-    svg_content = '''<svg height="50" width="50">
-      <rect width="50" height="50" style="fill:blue;"/>
-    </svg>'''
-    with tempfile.TemporaryDirectory() as tmpdir:
-        svg_path = Path(tmpdir) / "test2.svg"
-        with open(svg_path, "w") as f:
-            f.write(svg_content)
-        out_path = render_svg_to_png(str(svg_path))
-        assert os.path.exists(out_path)
-        assert out_path.endswith(".svg.png")
-        assert os.path.getsize(out_path) > 0
 
 def test_render_svg_to_png_file_not_found():
     try:

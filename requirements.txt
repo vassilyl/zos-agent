@@ -1,1 +1,5 @@
 cairosvg
+pillow
+openai
+azure-identity
+python-dotenv
