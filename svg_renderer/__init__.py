@@ -29,6 +29,20 @@ def render_svg_to_png(svg_path: str, png_path: Optional[str] = None, scale: floa
 
     with open(svg_path, "rb") as svg_file:
         svg_data = svg_file.read()
-        svg2png(bytestring=svg_data, write_to=png_path, scale=scale)
+        # Render to PNG in memory first
+        import io
+        from PIL import Image
+        png_bytes = io.BytesIO()
+        svg2png(bytestring=svg_data, write_to=png_bytes, scale=scale)
+        png_bytes.seek(0)
+        img = Image.open(png_bytes)
+        # If image has alpha, paste on white background
+        if img.mode in ("RGBA", "LA") or (img.mode == "P" and "transparency" in img.info):
+            bg = Image.new("RGBA", img.size, (255, 255, 255, 255))
+            bg.paste(img, mask=img.split()[-1])
+            img = bg.convert("RGB")
+        else:
+            img = img.convert("RGB")
+        img.save(png_path, format="PNG")
 
     return png_path
